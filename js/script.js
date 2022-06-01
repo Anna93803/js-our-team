@@ -11,7 +11,7 @@ const team = [
         nome: "Wayne",
         cognome: "Barnett",
         ruolo: "Founder & Ceo",
-        foto: "wayne-barnett-fouder-ceo.jpg",
+        foto: "wayne-barnett-founder-ceo.jpg",
     },
     {
         nome: "Angela",
@@ -48,7 +48,6 @@ const team = [
 // console.log(team);
 
 for(let i = 0; i < team.length; i++) {
-
     const componenteTeam = team[i];
     console.log(componenteTeam);
 }
@@ -68,7 +67,7 @@ for(let i = 0; i < team.length; i++) {
 console.log(containerTeam);
 
 // creo una funzione per le card
-function createContent (teamComponent) {
+function createContent (team) {
 
     // creo i vari div e poi ci aggiungo la classe e stampo
     const teamCard = document.createElement("div");
@@ -78,7 +77,7 @@ function createContent (teamComponent) {
 
     const image = document.createElement("img");
     image.classList.add("card-image");
-    image.src = `img${team.foto}`;
+    image.src = `img/${team.foto}`;
     image.alt = team.nome, team.cognome;
 
     const cardText = document.createElement("div");
@@ -92,5 +91,7 @@ function createContent (teamComponent) {
 
     return teamCard;
 
-}
+};
+
+console.log(createContent());
 
