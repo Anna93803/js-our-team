@@ -95,3 +95,5 @@ function createContent (team) {
 
 console.log(createContent());
 
+// BONUS
+// stilizziamo la sezione realizzando le card di ciascun membro del team, come nel mockup allegato.
