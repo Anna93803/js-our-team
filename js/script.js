@@ -52,3 +52,45 @@ for(let i = 0; i < team.length; i++) {
     const componenteTeam = team[i];
     console.log(componenteTeam);
 }
+
+
+// Milestone 2:
+
+// stampare i dati all’interno di un contenitore nella pagina html in modo dinamico
+// creando per ciascun membro del team un elemento html che conterrà i suoi dati.
+// recupero il container dall'html
+const containerTeam = document.querySelector(".team-container");
+
+// faccio un ciclo for per stampare a schermo i vari componenti del team
+for(let i = 0; i < team.length; i++) {
+    containerTeam.append(createContent(team[i]));
+}
+console.log(containerTeam);
+
+// creo una funzione per le card
+function createContent (teamComponent) {
+
+    // creo i vari div e poi ci aggiungo la classe e stampo
+    const teamCard = document.createElement("div");
+    teamCard.classList.add("team-card");
+
+    const cardImage = document.createElement("div");
+
+    const image = document.createElement("img");
+    image.classList.add("card-image");
+    image.src = `img${team.foto}`;
+    image.alt = team.nome, team.cognome;
+
+    const cardText = document.createElement("div");
+    cardText.classList.add("card-text");
+    cardText.innerHTML = `<h3>${team.nome} ${team.cognome}</h3>
+                            <p>${team.ruolo}</p>`;
+
+    cardImage.append(image);
+    teamCard.append(cardImage);
+    teamCard.append(cardText);
+
+    return teamCard;
+
+}
+
